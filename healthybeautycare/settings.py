@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-1h#=r9k&z@=u1$rzl2$d&_t-zq4k#uw3*5(60)rb-t$7#@5p^9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['healthybeautycare.onrender.com']
+ALLOWED_HOSTS = ['healthybeautystudio.onrender.com']
 
 
 
