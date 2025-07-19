@@ -25,75 +25,59 @@ def contact(request):
     return render(request, 'contact.html', {'form': form})
 
 def appointment(request):
-   if request.method == 'POST':
-        # Manually get data from form fields
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        date = request.POST.get('date')
-        time = request.POST.get('time') 
-        service = request.POST.get('service')
+    if request.method == 'POST':
+        form = AppointmentForm(request.POST)
+        if form.is_valid():
+            appointment = form.save()
 
-        # Save to database
-        Appointment.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            date=date,
-            time=time,
-            service=service
-        )
-         # Email to customer
-        customer_subject = 'Appointment Confirmation - Healthy Beauty Studio'
-        customer_message = f"""
-        Hi {name},
+            # Email to customer
+            customer_subject = 'Appointment Confirmation - Healthy Beauty Studio'
+            customer_message = f"""
+Hi {appointment.name},
 
-        ✅ Your appointment is confirmed!
-  
-        📅 Date: {date}
-        🕒 Time: {time}
-        💇‍♀️ Service: {service}
+✅ Your appointment is confirmed!
 
-        We look forward to seeing you!
+📅 Date: {appointment.date}
+🕒 Time: {appointment.time}
+💇‍♀️ Service: {appointment.service}
 
-      Healthy Beauty Studio
-        """
+We look forward to seeing you!
 
-        send_mail(
-            customer_subject,
-            customer_message,
-            'rjain84291@gmail.com',  # sender (must match EMAIL_HOST_USER)
-            [email],                # recipient (customer)
-            fail_silently=False,
-        )
+Healthy Beauty Studio
+            """
 
-        # Email to studio owner
-        owner_subject = f'New Appointment Booked by {name}'
-        owner_message = f"""
+            send_mail(
+                customer_subject,
+                customer_message,
+                'rjain84291@gmail.com',
+                [appointment.email],
+                fail_silently=False,
+            )
+
+            # Email to studio owner
+            owner_subject = f'New Appointment Booked by {appointment.name}'
+            owner_message = f"""
 A new appointment has been booked:
 
-👤 Name: {name}
-📧 Email: {email}
-📞 Phone: {phone}
-💇‍♀️ Service: {service}
-📅 Date: {date}
-🕒 Time: {time}
-        """
+👤 Name: {appointment.name}
+📧 Email: {appointment.email}
+📞 Phone: {appointment.phone}
+💇‍♀️ Service: {appointment.service}
+📅 Date: {appointment.date}
+🕒 Time: {appointment.time}
+            """
 
-        send_mail(
-            owner_subject,
-            owner_message,
-            'rjain84291@gmail.com',
-            ['rjain84291@gmail.com'],  # Replace with actual owner email
-            fail_silently=False,
-        )
+            send_mail(
+                owner_subject,
+                owner_message,
+                'rjain84291@gmail.com',
+                ['rjain84291@gmail.com'],
+                fail_silently=False,
+            )
 
-        messages.success(request, 'Appointment booked! Confirmation sent to your email.')
-
-        # Send success message
-        #messages.success(request, 'Your Appointment is booked!')
-
-        # Redirect to home
-        return redirect('home')
-
-   return render(request, 'appointment.html')
+            messages.success(request, 'Appointment booked! Confirmation sent to your email.')
+            return redirect('home')
+    else:
+        form = AppointmentForm()
+    
+    return render(request, 'appointment.html', {'form': form})
