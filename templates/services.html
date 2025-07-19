@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Services | Healthy Beauty Studio{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-black text-white" style="margin-top: 10px; border-top: 5px solid #0e0e0eff;">
+
+  <div class="container text-center my-5">
+    <h2 class="fw-bold mb-4" data-aos="fade-down"  data-aos-delay="100">Our Services & Packages</h2>
+    <p class="text-light mb-5" data-aos="fade-up">Choose from our best beauty treatments at affordable prices</p>
+     <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Facial Card -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'facial.jpg' %}" class="card-img-top" alt="Facial">
+                <div class="card-body">
+                  <h5 class="card-title">Glow Facial</h5>
+                  <p class="card-text">Hydrate & brighten your skin with natural care.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>💆 Basic Facial – ₹499</li>
+                    <li>🌿 Fruit Facial – ₹799</li>
+                    <li>✨ Gold Facial – ₹999</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+             <div class="col-12 col-md-4 mb-4">
+              <!-- Hair Spa Card -->
+              
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'hairspa.jpg' %}" class="card-img-top" alt="Hair Spa">
+                <div class="card-body">
+                  <h5 class="card-title">Hair Spa & Care</h5>
+                  <p class="card-text">Nourish, protect & style with expert care.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>🧴 Oil Massage – ₹399</li>
+                    <li>💇‍♀️ Hair Spa – ₹899</li>
+                    <li>🌈 Color & Style – ₹1499</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Bridal Card -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'bridal.jpg' %}" class="card-img-top" alt="Bridal">
+                <div class="card-body">
+                  <h5 class="card-title">Bridal Packages</h5>
+                  <p class="card-text">Make your big day shine with our bridal looks.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>💄 Party Makeup – ₹1999</li>
+                    <li>👰 Bridal Basic – ₹4999</li>
+                    <li>👑 Premium Bridal – ₹8999</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Manicure Pedicure -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'pedicure.jpg' %}" class="card-img-top" alt="Pedicure">
+                <div class="card-body">
+                  <h5 class="card-title">Hand & Foot Care</h5>
+                  <p class="card-text">Refresh and relax your hands & feet.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>💅 Manicure – ₹499</li>
+                    <li>🦶 Pedicure – ₹599</li>
+                    <li>🌸 Combo – ₹999</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Haircut -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'haircut.jpg' %}" class="card-img-top" alt="Haircut">
+                <div class="card-body">
+                  <h5 class="card-title">Stylish Haircuts</h5>
+                  <p class="card-text">Trendy cuts to suit your face & vibe.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>✂️ Basic Cut – ₹299</li>
+                    <li>💇‍♀️ Layer Cut – ₹499</li>
+                    <li>🎀 Fashion Cut – ₹699</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Body Spa -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'bodyspa.jpg' %}" class="card-img-top" alt="Body Spa">
+                <div class="card-body">
+                  <h5 class="card-title">Relaxing Body Spa</h5>
+                  <p class="card-text">De-stress with our full-body rejuvenation therapy.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>🛁 Steam Therapy – ₹999</li>
+                    <li>🌸 Aroma Spa – ₹1499</li>
+                    <li>💆 Full Body Spa – ₹1999</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Hairstyling -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'hairstyling.jpg' %}" class="card-img-top" alt="Hairstyling">
+                <div class="card-body">
+                  <h5 class="card-title">Hair Styling</h5>
+                  <p class="card-text">Look your best with perfect styling.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>🎨 Blow Dry – ₹499</li>
+                    <li>🌟 Iron Curls – ₹699</li>
+                    <li>💫 Braiding – ₹599</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Massage -->
+              <div class="card h-100 bg-dark text-white border-0 shadow">
+                <img src="{% static 'bodymassage.jpg' %}" class="card-img-top" alt="Massage">
+                <div class="card-body">
+                  <h5 class="card-title">Therapeutic Massage</h5>
+                  <p class="card-text">Relax muscles & refresh your soul.</p>
+                  <ul class="list-unstyled text-start">
+                    <li>👐 Head Massage – ₹399</li>
+                    <li>🧖 Back Massage – ₹699</li>
+                    <li>💆‍♀️ Full Body – ₹1299</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <!-- Add any extra card or leave blank -->
+              <div class="h-100 bg-dark text-white border-0 shadow d-flex align-items-center justify-content-center">
+                <h5>More coming soon...</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <!-- Previous Button -->
+<button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon bg-light rounded-circle p-2" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Next Button -->
+<button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon bg-light rounded-circle p-2" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+    </div>
+  </div>
+</section>
+<!--Instagram strips-->
+<section class="py-5 bg-light text-black text-center" style="background-color:#2c2c2c;">
+  <div class="container">
+    <h3 class="fw-bold mb-4">Our Work Speaks Beauty</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="{% static 'certi.jpg' %}" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'work2.jpg' %}" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/work3.jpg' %}" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING CONTACT US BUTTON -->
+<a href="{% url 'contact' %}" class="text-decoration-none">
+  <div class="position-fixed bottom-0 end-0 m-4 bg-dark text-white d-flex align-items-center gap-2 p-3 rounded-pill shadow"
+       style="z-index: 9999; transition: 0.3s;">
+    <i class="bi bi-envelope-fill fs-5 text-info"></i>
+    <span class="fw-semibold">Contact Us</span>
+  </div>
+</a>
+
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <!-- About -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold">Healthy Beauty Studio</h5>
+        <p>Your destination for elegance, relaxation, and rejuvenation. Let us bring out your inner beauty.</p>
+      </div>
+
+    <!-- Social Links -->
+    <div class="mb-3">
+      <a href="https://www.instagram.com/healthy_beauty_studio_/profilecard/?igsh=MW5mcmNnY3lyNno4bg==" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-instagram footer-icon1" ></i>
+      </a>
+      <a href="https://wa.me/919414794682?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Healthy%20Beauty%20Studio!" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-whatsapp footer-icon2"></i>
+      </a>
+      <a href="tel:+919414794682" class="text-white me-3 fs-4">
+        <i class="bi bi-telephone-fill footer-icon3"></i>
+      </a>
+      <a href="mailto:Healthybeautycare215@gmail.com" class="text-white fs-4">
+        <i class="bi bi-envelope-fill footer-icon4"></i>
+      </a>
+    </div>
+
+    
+
+    <!-- Footer Text -->
+    <p class="mb-0">© 2025 Healthy Beauty Studio. All Rights Reserved.</p>
+    <small>Designed with 💅 by You</small>
+  </div>
+</footer>
+
+
+{%endblock%}

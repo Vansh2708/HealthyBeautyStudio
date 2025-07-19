@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Appointment | Glamour Beauty Parlor{% endblock %}
+
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold" data-aos="fade-down">Book Your Appointment</h2>
+          <p class="text-dark" data-aos="fade-up" >Schedule your beauty session at your convenience</p>
+        </div>
+
+        <form method="post" action="" class="p-4 bg-black rounded-4 shadow-lg text-white" data-aos="fade-up">
+          {% csrf_token %}
+          
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Phone Number</label>
+            <input type="tel" name="phone" class="form-control" placeholder="Enter your number" required>
+          </div>
+
+          <div class="mb-3">
+  <label class="form-label fw-semibold">Preferred Date</label>
+  <input 
+    type="text" 
+    name="date" 
+    class="form-control" 
+    placeholder="YYYY-MM-DD" 
+    onfocus="this.type='date'" 
+    onblur="if (!this.value) this.type='text'" 
+    required
+  >
+</div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Preferred Time </label>
+            <select name="time" class="form-control" required>
+              <option value="">Select a Time</option>
+              <option value="10am-11am">10am-11am</option>
+              <option value="11am-12pm">11am-12pm</option>
+              <option value="12pm-1pm">12pm-1pm</option>
+              <option value="1pm-2pm">1pm-2pm</option>
+              <option value="2pm-3pm">2pm-3pm</option>
+              <option value="3pm-4pm">3pm-4pm</option>
+              <option value="4pm-5pm">4pm-5pm</option>
+              <option value="5pm-6pm">5pm-6pm</option>
+              <option value="6pm-7pm">6pm-7pm</option>
+              <option value="7pm-8pm">7pm-8pm</option>
+            </select>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Service</label>
+            <select name="service" class="form-control" required>
+              <option value="">Select a Service</option>
+              <option value="Haircut">Haircut</option>
+              <option value="Facial">Facial</option>
+              <option value="Makeup">Makeup</option>
+              <option value="Hair Spa">Hair Spa</option>
+              <option value="Hair Styling">Hair Styling</option>
+              <option value="Pedicure">Pedicure & Manicure</option>
+              <option value="Body Massage">Body Massage</option>
+              <option value="Waxing">Waxing</option>
+            </select>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-light px-4 py-2 rounded-pill">Book Now</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success" style="color: green; padding: 10px; border: 1px solid green; border-radius: 5px; margin-bottom: 10px;">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <!-- About -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold">Healthy Beauty Studio</h5>
+        <p>Your destination for elegance, relaxation, and rejuvenation. Let us bring out your inner beauty.</p>
+      </div>
+
+    <!-- Social Links -->
+    <div class="mb-3">
+      <a href="https://www.instagram.com/healthy_beauty_studio_/profilecard/?igsh=MW5mcmNnY3lyNno4bg==" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-instagram footer-icon1" ></i>
+      </a>
+      <a href="https://wa.me/919414794682?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Healthy%20Beauty%20Studio!" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-whatsapp footer-icon2"></i>
+      </a>
+      <a href="tel:+919414794682" class="text-white me-3 fs-4">
+        <i class="bi bi-telephone-fill footer-icon3"></i>
+      </a>
+      <a href="mailto:Healthybeautycare215@gmail.com" class="text-white fs-4">
+        <i class="bi bi-envelope-fill footer-icon4"></i>
+      </a>
+    </div>
+
+    <!-- Footer Text -->
+    <p class="mb-0">© 2025 Healthy Beauty Studio. All Rights Reserved.</p>
+    <small>Designed with 💅 by You</small>
+  </div>
+</footer>
+{% endblock %}

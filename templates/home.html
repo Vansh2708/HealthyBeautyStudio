@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Healthy Beauty Studio{% endblock %}
+
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<!-- HERO SECTION -->
+<section class="text-black text-center py-5" style="background: url('{% static '' %}') no-repeat center center/cover; min-height: 80vh;">
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+  <img src="{% static 'logofinal.jpg' %}" alt="Logo" style="height: 100px;" class="mb-4" data-aos="fade-down">
+    <h1 class="display-4 fw-bold" data-aos="fade-up">Healthy Beauty Studio</h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="100">Where elegance meets excellence.</p>
+    
+  </div>
+</section>
+
+<!-- OWNER SECTION -->
+<section class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <div class="p-4 rounded shadow" style="background-color: black;" data-aos="fade-up">
+      <h3 class="fw-bold mb-3">Meet Our Founder</h3>
+      <img src={%static 'founder.jpg' %} class="rounded-pill mb-3" width="120" alt="Owner">
+      <h5 class="fw-semibold">Ms. Rekha Jain</h5>
+      <p  style="color:white;">Founder & Chief Stylist</p>
+      <p class="mx-auto" style="max-width: 600px;">
+        With 12+ years in the beauty industry, Ms. Jain’s vision has shaped Glamour Beauty Parlor into a sanctuary of grace and self-expression.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES SECTION -->
+<section class="py-5 bg-dark text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">
+      <a href="/services" style="color: white; text-decoration: none;">Our Services</a>
+    </h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 shadow-sm">
+          <img src="{%static 'facial.jpg'%}" class="card-img-top" alt="Facial">
+          <div class="card-body">
+            <h5 class="card-title">Facial</h5>
+            <p class="card-text">Rejuvenate your skin with luxurious facial treatments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'makeup.jpg' %}" class="card-img-top" alt="Makeup">
+          <div class="card-body">
+            <h5 class="card-title">Makeup</h5>
+            <p class="card-text">Bridal, party, or casual — we glam you up perfectly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'hairstyling.jpg' %}" class="card-img-top" alt="Hair Styling">
+          <div class="card-body">
+            <h5 class="card-title">Hair Styling</h5>
+            <p class="card-text">Trendy cuts, coloring, and spa treatments for all hair types.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK APPOINTMENT SECTION -->
+ <section class="py-5 text-dark text-center" style="background-color: white;">
+  <div class="container" data-aos="fade-up">
+    <h2 class="fw-bold mb-4 display-5">Ready for a New Look?</h2>
+    <p class="mb-4 fs-5">
+      Book your appointment today and let our professionals pamper you with the best beauty services.
+    </p>
+    <a href="/appointment"
+       class="btn btn-gradient btn-lg px-5 py-3 rounded-pill shadow"
+       data-aos="zoom-in" data-aos-delay="200">
+      Book an Appointment
+    </a>
+  </div>
+</section>
+
+<!-- FLOATING CONTACT US BUTTON -->
+<a href="{% url 'contact' %}" class="text-decoration-none">
+  <div class="position-fixed bottom-0 end-0 m-4 bg-dark text-white d-flex align-items-center gap-2 p-3 rounded-pill shadow"
+       style="z-index: 9999; transition: 0.3s;">
+    <i class="bi bi-envelope-fill fs-5 text-info"></i>
+    <span class="fw-semibold">Contact Us</span>
+  </div>
+</a>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center py-4">
+  <div class="container">
+    <!-- About -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold">Healthy Beauty Studio</h5>
+        <p>Your destination for elegance, relaxation, and rejuvenation. Let us bring out your inner beauty.</p>
+      </div>
+
+    <!-- Social Links -->
+    <div class="mb-3">
+      <a href="https://www.instagram.com/healthy_beauty_studio_/profilecard/?igsh=MW5mcmNnY3lyNno4bg==" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-instagram footer-icon1" ></i>
+      </a>
+      <a href="https://wa.me/919414794682?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Healthy%20Beauty%20Studio!" target="_blank" class="text-white me-3 fs-4">
+        <i class="bi bi-whatsapp footer-icon2"></i>
+      </a>
+      <a href="tel:+919414794682" class="text-white me-3 fs-4">
+        <i class="bi bi-telephone-fill footer-icon3"></i>
+      </a>
+      <a href="mailto:Healthybeautycare215@gmail.com" class="text-white fs-4">
+        <i class="bi bi-envelope-fill footer-icon4"></i>
+      </a>
+    </div>
+
+    <!-- Footer Text -->
+    <p class="mb-0">© 2025 Healthy Beauty Studio. All Rights Reserved.</p>
+    <small>Designed with 💅 by You</small>
+  </div>
+</footer>
+
+
+{% endblock %}
