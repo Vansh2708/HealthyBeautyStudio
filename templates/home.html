@@ -14,25 +14,56 @@
 {% endif %}
 
 <!-- HERO SECTION -->
-<section class="text-black text-center py-5" style="background: url('{% static '' %}') no-repeat center center/cover; min-height: 80vh;">
-  <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
-  <img src="{% static 'logofinal.jpg' %}" alt="Logo" style="height: 100px;" class="mb-4" data-aos="fade-down">
-    <h1 class="display-4 fw-bold" data-aos="fade-up">Healthy Beauty Studio</h1>
-    <p class="lead" data-aos="fade-up" data-aos-delay="100">Where elegance meets excellence.</p>
-    
+<section class="text-white" style="background: url('{% static "background.avif" %}') no-repeat center center/cover; min-height: 100vh; position: relative;">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <!-- Left-aligned content -->
+      <div class="col-12 d-flex flex-column align-items-start justify-content-start ps-3 pt-4" style="max-width: 600px;" data-aos="fade-right">
+
+        <!-- Logo and Title -->
+        <div class="d-flex align-items-center mb-4">
+          <img src="{% static 'logofinal.jpg' %}" alt="Logo" style="height: 60px;" class="me-2" data-aos="zoom-in">
+          <h1 class="display-6 fw-bold m-0" data-aos="fade-down">Healthy Beauty Studio</h1>
+        </div>
+
+       <!-- Smaller Service Boxes -->
+        <div class="d-flex flex-column gap-2 w-100">
+          <a href="{% url 'services' %}" class="text-decoration-none">
+          <div class="bg-dark text-white rounded shadow-sm px-3 py-2 service-box" style="width: 160px;" data-aos="fade-right" data-aos-delay="100">
+            <strong>💄 Makeup</strong>
+          </div>
+        </a>
+         <a href="{% url 'services' %}" class="text-decoration-none">
+          <div class="bg-dark text-white rounded shadow-sm px-3 py-2 service-box " style="width: 160px;" data-aos="fade-right" data-aos-delay="200">
+            <strong>🧴 Skincare</strong>
+          </div>
+        </a>
+
+          <a href="{% url 'services' %}" class="text-decoration-none">
+          <div class="bg-dark text-white rounded shadow-sm px-3 py-2 service-box " style="width: 160px;" data-aos="fade-right" data-aos-delay="300">
+            <strong>💇‍♀️ Haircare</strong>
+          </div>
+        </a>
+
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
+
+
 
 <!-- OWNER SECTION -->
 <section class="py-5 bg-dark text-white text-center">
   <div class="container">
     <div class="p-4 rounded shadow" style="background-color: black;" data-aos="fade-up">
       <h3 class="fw-bold mb-3">Meet Our Founder</h3>
-      <img src={%static 'founder.jpg' %} class="rounded-pill mb-3" width="120" alt="Owner">
-      <h5 class="fw-semibold">Ms. Rekha Jain</h5>
+      <img src={%static 'founder1.jpg' %} class="rounded-pill mb-3" width="120" alt="Owner">
+      <h5 class="fw-semibold">Mrs. Rekha Jain</h5>
       <p  style="color:white;">Founder & Chief Stylist</p>
       <p class="mx-auto" style="max-width: 600px;">
-        With 12+ years in the beauty industry, Ms. Jain’s vision has shaped Glamour Beauty Parlor into a sanctuary of grace and self-expression.
+       With over 14 years of experience, Mrs. Jain has transformed Healthy Beauty Studio into a leading name in beauty and wellness. Her dedication to quality and creativity earned her the ‘Best Makeup Artist’ award. Through expert skincare, makeup, and haircare services, she continues to inspire confidence and elegance in every client.
       </p>
     </div>
   </div>
@@ -48,28 +79,28 @@
     <div class="row g-4">
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card h-100 shadow-sm">
-          <img src="{%static 'facial.jpg'%}" class="card-img-top" alt="Facial">
-          <div class="card-body">
-            <h5 class="card-title">Facial</h5>
-            <p class="card-text">Rejuvenate your skin with luxurious facial treatments.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm">
-          <img src="{% static 'makeup.jpg' %}" class="card-img-top" alt="Makeup">
+          <img src="{%static 'makeup.jpg'%}" class="card-img-top" alt="Facial">
           <div class="card-body">
             <h5 class="card-title">Makeup</h5>
             <p class="card-text">Bridal, party, or casual — we glam you up perfectly.</p>
           </div>
         </div>
       </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 shadow-sm">
+          <img src="{% static 'hairspa.jpg' %}" class="card-img-top" alt="Makeup">
+          <div class="card-body">
+            <h5 class="card-title">Haircare</h5>
+            <p class="card-text">Trendy cuts, coloring, and spa treatments for all hair types.</p>
+          </div>
+        </div>
+      </div>
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
         <div class="card h-100 shadow-sm">
-          <img src="{% static 'hairstyling.jpg' %}" class="card-img-top" alt="Hair Styling">
+          <img src="{% static 'facial.jpg' %}" class="card-img-top" alt="Hair Styling">
           <div class="card-body">
-            <h5 class="card-title">Hair Styling</h5>
-            <p class="card-text">Trendy cuts, coloring, and spa treatments for all hair types.</p>
+            <h5 class="card-title">Skincare</h5>
+            <p class="card-text">Glow naturally with expert skincare treatments tailored just for you at our parlor.</p>
           </div>
         </div>
       </div>
